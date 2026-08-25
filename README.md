@@ -37,10 +37,3 @@ Lab1/
 Core use cases: Register/Login, Create Contract & Define Milestones, Submit Draft Deliverable,
 Apply Watermark, Review Draft, Request Revision, Approve Milestone, Release Milestone Payment,
 Process Payment, Receive Notification.
-
----
-
-## Author
-*SARTHKI VACHHANI*
-*PES1UG24CS422*
-*5 G*
