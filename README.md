@@ -19,16 +19,12 @@ payment releases from escrow.
 
 ```
 Lab1/
-├── Requirements_Table.docx   # 5 Functional + 2 Non-Functional Requirements
-├── usecase_diagram.pdf       # UML Use-Case Diagram (actors, use cases, <<include>>/<<extend>>)
-└── UseCase_Flow.docx         # 1-page flow spec: Release Milestone Payment
+└── Lab1_Complete.pdf   # All three deliverables combined
 ```
 
 | File | Description |
 |---|---|
-| `Requirements_Table.docx` | FR-001–FR-005 and NFR-001–NFR-002, each with Req ID, Type, Description, Priority, Acceptance Criteria, and Rationale. |
-| `usecase_diagram.pdf` | UML Use-Case Diagram showing all actors and 10 use cases, including at least one `<<include>>` (Submit Draft Deliverable → Apply Watermark; Release Milestone Payment → Process Payment) and one `<<extend>>` (Request Revision → Review Draft) relationship. |
-| `UseCase_Flow.docx` | Use-case flow specification for **UC-08: Release Milestone Payment**, detailing Preconditions, Postconditions, Main Success Scenario, and an Alternate Flow (payment declined). |
+| `Lab1_Complete.pdf` | Combined PDF containing: (1) Requirements Table — FR-001–FR-005 and NFR-001–NFR-002 with Req ID, Type, Description, Priority, Acceptance Criteria, Rationale; (2) UML Use-Case Diagram with all actors and use cases, including at least one `<<include>>` and one `<<extend>>` relationship; (3) Use-Case Flow Specification for **UC-08: Release Milestone Payment**, covering Preconditions, Postconditions, Main Success Scenario, and an Alternate Flow. |
 
 ---
 
@@ -44,15 +40,7 @@ Process Payment, Receive Notification.
 
 ---
 
-## 4. Tools Used
-
-- UML diagram: matplotlib-based diagram export (draw.io-equivalent layout)
-- Documents: Word (.docx)
-
----
-
 ## Author
-
 *SARTHKI VACHHANI*
 *PES1UG24CS422*
 *5 G*
