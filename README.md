@@ -1,4 +1,3 @@
-# PES University — Dept. of CSE
 ## Lab 1: Requirements Engineering & UML Use-Case Modelling
 
 **Problem Statement #53 | Media, Events & Community**
