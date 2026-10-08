@@ -53,3 +53,4 @@ class Note:
 
     def get_rect(self, lane_x):
         return pygame.Rect(lane_x - self.WIDTH//2, int(self.y), self.WIDTH, self.HEIGHT)
+        #got the beats to work
