@@ -16,7 +16,7 @@ A small Python module that works out taxable income under two tax regimes, calcu
 | `BranchCoverageTest_income_tax_application.py` | Tests for decision branch coverage |
 | `Lab6_Income_Tax_Coverage_Report.pdf` | Coverage summary with both command output figures |
 
-Keep all your Lab 6 work in this `LAB6` folder. Lab 7 will be added to this repo later.
+Keep all Lab 6 work in this `LAB6` folder. Lab 7 is in the sibling folder [`Lab7`](../Lab7/README.md).
 
 Refer to the lab handout for instructions.
 
