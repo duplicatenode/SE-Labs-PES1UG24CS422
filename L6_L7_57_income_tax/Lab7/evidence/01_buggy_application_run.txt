@@ -1,3 +1,0 @@
-Normalized text: Ada	Lovelace
-Parsed integers: [12, -3, 9]
-Summary: {'count': 3, 'min': -3, 'max': 12, 'total': 18, 'average': 6.0}

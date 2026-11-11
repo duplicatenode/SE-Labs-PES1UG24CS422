@@ -1,29 +1,59 @@
-"""Pre-fix baseline kept to reproduce the fuzzing failures."""
+"""Lab 6 income tax application used as the Lab 7 fuzzing target."""
 
 
-def normalize_text(text):
-    return " ".join(text.strip().split(" "))
+def taxable_income(gross, regime, investments):
+    if gross < 0:
+        raise ValueError("invalid income")
+    if regime == "new":
+        deduction = 75000
+    elif regime == "old":
+        if investments > 150000:
+            investments = 150000
+        deduction = 50000 + investments
+    else:
+        raise ValueError("unknown regime")
+    taxable = gross - deduction
+    if taxable < 0:
+        return 0
+    return taxable
 
 
-def parse_integer_list(text):
-    return [int(item) for item in text.split(",")]
+def tax_due(taxable, age):
+    if taxable < 0:
+        raise ValueError("invalid amount")
+    if age >= 80:
+        exempt = 500000
+    elif age >= 60:
+        exempt = 300000
+    else:
+        exempt = 250000
+    if taxable <= exempt:
+        return 0
+    slab = taxable - exempt
+    if slab <= 250000:
+        return slab * 5 // 100
+    return 12500 + (slab - 250000) * 20 // 100
 
 
-def summarize_numbers(numbers):
-    total = sum(numbers)
-    average = total / len(numbers)
-    return {
-        "count": len(numbers),
-        "min": min(numbers),
-        "max": max(numbers),
-        "total": total,
-        "average": average,
-    }
+def refund_status(tax_paid, tax_due_amount, filed_on_time):
+    difference = tax_paid - tax_due_amount
+    if difference > 0:
+        if filed_on_time:
+            return "refund"
+        return "refund delayed"
+    elif difference < 0:
+        if filed_on_time:
+            return "pay balance"
+        return "pay balance with penalty"
+    return "settled"
+
+
+def main():
+    """Run a short demonstration with ordinary Lab 6 inputs."""
+    print("Taxable income:", taxable_income(1000000, "new", 0))
+    print("Tax due:", tax_due(600000, 30))
+    print("Refund status:", refund_status(15000, 12500, True))
 
 
 if __name__ == "__main__":
-    sample_text = "  Ada\tLovelace   "
-    sample_numbers = parse_integer_list("12, -3, 9")
-    print("Normalized text:", normalize_text(sample_text))
-    print("Parsed integers:", sample_numbers)
-    print("Summary:", summarize_numbers(sample_numbers))
+    main()

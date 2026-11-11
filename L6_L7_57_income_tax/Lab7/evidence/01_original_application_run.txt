@@ -1,0 +1,4 @@
+$ python processor_buggy.py
+Taxable income: 925000
+Tax due: 32500
+Refund status: refund

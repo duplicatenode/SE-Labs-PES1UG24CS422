@@ -1,0 +1,116 @@
+.FF.FF.FFFF                                                              [100%]
+================================== FAILURES ===================================
+______________ test_taxable_income_rejects_negative_investments _______________
+test_processor.py:23: in test_taxable_income_rejects_negative_investments
+    @example(investments=-1)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:25: in test_taxable_income_rejects_negative_investments
+    with pytest.raises(ValueError, match="investments must be nonnegative"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+E   Failing explicit example: test_taxable_income_rejects_negative_investments(
+E       investments=-1,
+E   )
+________________ test_taxable_income_rejects_non_integer_gross ________________
+test_processor.py:30: in test_taxable_income_rejects_non_integer_gross
+    @example(gross=1.5)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:32: in test_taxable_income_rejects_non_integer_gross
+    with pytest.raises(TypeError, match="gross must be an integer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE TypeError
+E   Failing explicit example: test_taxable_income_rejects_non_integer_gross(
+E       gross=1.5,
+E   )
+______________________ test_tax_due_rejects_negative_age ______________________
+test_processor.py:48: in test_tax_due_rejects_negative_age
+    @example(age=-1)
+                   ^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:50: in test_tax_due_rejects_negative_age
+    with pytest.raises(ValueError, match="age must be nonnegative"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+E   Failing explicit example: test_tax_due_rejects_negative_age(
+E       age=-1,
+E   )
+_______________ test_tax_due_rejects_non_integer_taxable_income _______________
+test_processor.py:55: in test_tax_due_rejects_non_integer_taxable_income
+    @example(taxable=100_000.5)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:57: in test_tax_due_rejects_non_integer_taxable_income
+    with pytest.raises(TypeError, match="taxable must be an integer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE TypeError
+E   Failing explicit example: test_tax_due_rejects_non_integer_taxable_income(
+E       taxable=100000.5,
+E   )
+________________ test_refund_status_rejects_negative_tax_paid _________________
+test_processor.py:77: in test_refund_status_rejects_negative_tax_paid
+    @example(tax_paid=-1)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:79: in test_refund_status_rejects_negative_tax_paid
+    with pytest.raises(ValueError, match="tax amounts must be nonnegative"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+E   Failing explicit example: test_refund_status_rejects_negative_tax_paid(
+E       tax_paid=-1,
+E   )
+_________________ test_refund_status_rejects_negative_tax_due _________________
+test_processor.py:84: in test_refund_status_rejects_negative_tax_due
+    @example(due=-1)
+                   ^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:86: in test_refund_status_rejects_negative_tax_due
+    with pytest.raises(ValueError, match="tax amounts must be nonnegative"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+E   Failing explicit example: test_refund_status_rejects_negative_tax_due(
+E       due=-1,
+E   )
+_______________ test_refund_status_requires_boolean_filing_flag _______________
+test_processor.py:91: in test_refund_status_requires_boolean_filing_flag
+    @example(on_time=0)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:93: in test_refund_status_requires_boolean_filing_flag
+    with pytest.raises(TypeError, match="filed_on_time must be a boolean"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE TypeError
+E   Failing explicit example: test_refund_status_requires_boolean_filing_flag(
+E       on_time=0,
+E   )
+_______________ test_refund_status_rejects_non_integer_tax_paid _______________
+test_processor.py:98: in test_refund_status_rejects_non_integer_tax_paid
+    @example(tax_paid=1.5)
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:100: in test_refund_status_rejects_non_integer_tax_paid
+    with pytest.raises(TypeError, match="tax_paid must be an integer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE TypeError
+E   Failing explicit example: test_refund_status_rejects_non_integer_tax_paid(
+E       tax_paid=1.5,
+E   )
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_taxable_income_rejects_negative_investments - ...
+FAILED test_processor.py::test_taxable_income_rejects_non_integer_gross - Fai...
+FAILED test_processor.py::test_tax_due_rejects_negative_age - Failed: DID NOT...
+FAILED test_processor.py::test_tax_due_rejects_non_integer_taxable_income - F...
+FAILED test_processor.py::test_refund_status_rejects_negative_tax_paid - Fail...
+FAILED test_processor.py::test_refund_status_rejects_negative_tax_due - Faile...
+FAILED test_processor.py::test_refund_status_requires_boolean_filing_flag - F...
+FAILED test_processor.py::test_refund_status_rejects_non_integer_tax_paid - F...
+8 failed, 3 passed, 1 warning in 4.71s

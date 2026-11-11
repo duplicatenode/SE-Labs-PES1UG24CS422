@@ -1,0 +1,3 @@
+$ python -m pytest test_processor.py -q
+...........                                                              [100%]
+11 passed, 1 warning in 3.51s
