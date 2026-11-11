@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+.hypothesis/
+.venv/
+_pdf_qa*/
+_build_*.py
+*.pyc

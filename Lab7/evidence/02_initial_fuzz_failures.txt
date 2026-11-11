@@ -1,0 +1,119 @@
+FFFFFFFFF.....F...F                                                      [100%]
+================================== FAILURES ===================================
+________________ test_normalize_text_collapses_all_whitespace _________________
+test_processor.py:10: in test_normalize_text_collapses_all_whitespace
+    @example("Ada\tLovelace")
+                   ^^^
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:14: in test_normalize_text_collapses_all_whitespace
+    assert normalized == " ".join(text.split())
+E   AssertionError: assert 'Ada\tLovelace' == 'Ada Lovelace'
+E     
+E     - Ada Lovelace
+E     ?    ^
+E     + Ada	Lovelace
+E     ?    ^
+E   (note: 1 other explicit example also failed with this error; use Verbosity.verbose to view)
+E   Failing explicit example: test_normalize_text_collapses_all_whitespace(
+E       text='Ada\tLovelace',
+E   )
+________________ test_normalize_text_rejects_non_strings[None] ________________
+test_processor.py:21: in test_normalize_text_rejects_non_strings
+    normalize_text(value)
+processor.py:6: in normalize_text
+    return " ".join(text.strip().split(" "))
+                    ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'strip'
+_________________ test_normalize_text_rejects_non_strings[42] _________________
+test_processor.py:21: in test_normalize_text_rejects_non_strings
+    normalize_text(value)
+processor.py:6: in normalize_text
+    return " ".join(text.strip().split(" "))
+                    ^^^^^^^^^^
+E   AttributeError: 'int' object has no attribute 'strip'
+_______________ test_normalize_text_rejects_non_strings[value2] _______________
+test_processor.py:21: in test_normalize_text_rejects_non_strings
+    normalize_text(value)
+processor.py:6: in normalize_text
+    return " ".join(text.strip().split(" "))
+                    ^^^^^^^^^^
+E   AttributeError: 'list' object has no attribute 'strip'
+_______________ test_normalize_text_rejects_non_strings[value3] _______________
+test_processor.py:21: in test_normalize_text_rejects_non_strings
+    normalize_text(value)
+processor.py:6: in normalize_text
+    return " ".join(text.strip().split(" "))
+                    ^^^^^^^^^^
+E   AttributeError: 'dict' object has no attribute 'strip'
+______________ test_parse_integer_list_round_trips_integer_lists ______________
+test_processor.py:25: in test_parse_integer_list_round_trips_integer_lists
+    @example([])
+                 
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:28: in test_parse_integer_list_round_trips_integer_lists
+    assert parse_integer_list(source) == values
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+processor.py:11: in parse_integer_list
+    return [int(item) for item in text.split(",")]
+            ^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+E   Failing explicit example: test_parse_integer_list_round_trips_integer_lists(
+E       values=[],
+E   )
+______________ test_parse_integer_list_rejects_non_strings[None] ______________
+test_processor.py:34: in test_parse_integer_list_rejects_non_strings
+    parse_integer_list(value)
+processor.py:11: in parse_integer_list
+    return [int(item) for item in text.split(",")]
+                                  ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+_______________ test_parse_integer_list_rejects_non_strings[42] _______________
+test_processor.py:34: in test_parse_integer_list_rejects_non_strings
+    parse_integer_list(value)
+processor.py:11: in parse_integer_list
+    return [int(item) for item in text.split(",")]
+                                  ^^^^^^^^^^
+E   AttributeError: 'int' object has no attribute 'split'
+_____________ test_parse_integer_list_rejects_non_strings[value2] _____________
+test_processor.py:34: in test_parse_integer_list_rejects_non_strings
+    parse_integer_list(value)
+processor.py:11: in parse_integer_list
+    return [int(item) for item in text.split(",")]
+                                  ^^^^^^^^^^
+E   AttributeError: 'list' object has no attribute 'split'
+____________________ test_summary_matches_list_properties _____________________
+test_processor.py:44: in test_summary_matches_list_properties
+    @example([])
+                 
+C:\Users\sarth\AppData\Local\Programs\Python\Python312\Lib\site-packages\hypothesis\core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_processor.py:46: in test_summary_matches_list_properties
+    result = summarize_numbers(values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+processor.py:17: in summarize_numbers
+    average = total / len(numbers)
+              ^^^^^^^^^^^^^^^^^^^^
+E   ZeroDivisionError: division by zero
+E   Failing explicit example: test_summary_matches_list_properties(
+E       values=[],
+E   )
+________________ test_summary_rejects_invalid_values[values3] _________________
+test_processor.py:61: in test_summary_rejects_invalid_values
+    with pytest.raises(TypeError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE TypeError
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_normalize_text_collapses_all_whitespace - Asse...
+FAILED test_processor.py::test_normalize_text_rejects_non_strings[None] - Att...
+FAILED test_processor.py::test_normalize_text_rejects_non_strings[42] - Attri...
+FAILED test_processor.py::test_normalize_text_rejects_non_strings[value2] - A...
+FAILED test_processor.py::test_normalize_text_rejects_non_strings[value3] - A...
+FAILED test_processor.py::test_parse_integer_list_round_trips_integer_lists
+FAILED test_processor.py::test_parse_integer_list_rejects_non_strings[None]
+FAILED test_processor.py::test_parse_integer_list_rejects_non_strings[42] - A...
+FAILED test_processor.py::test_parse_integer_list_rejects_non_strings[value2]
+FAILED test_processor.py::test_summary_matches_list_properties - ZeroDivision...
+FAILED test_processor.py::test_summary_rejects_invalid_values[values3] - Fail...
+11 failed, 8 passed, 1 warning in 8.34s
